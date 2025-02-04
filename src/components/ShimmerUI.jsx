@@ -3,15 +3,16 @@ const ShimmerCard = ()=>{
 
     return(
 
-                <div className="shimmer-card">
-        
-                       <div className="shimmer-img stroke animate" ></div>
-                        <div className="shimmer-title stroke animate" ></div>
-                       <div className="shimmer-tags stroke animate"></div>
-                        <div className="shimmer-details stroke animate"></div>
-                    
-                        
-                </div>
+        <div className="shimmer-container">
+
+        <div className="shimmer-card shimmer-wrapper">
+        <div className="shimmer-image shimmer-wrapper"></div>
+        <div className="shimmer-title shimmer-wrapper"></div>
+        <div className="shimmer-text shimmer-wrapper"></div>
+        <div className="shimmer-text shimmer-wrapper"></div>
+        <div className="shimmer-button shimmer-wrapper"></div>
+        </div>
+        </div>
 
     );
 }
@@ -42,3 +43,4 @@ const ShimmerUI = () =>{
 }
 
 export default ShimmerUI;
+

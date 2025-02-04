@@ -27,22 +27,22 @@ const Header = () =>{
             
             <ul>
                 <Link to="/">
-                <li>Home</li>
+                <li className="liTag">Home</li>
                 </Link>
 
                 <Link to="/about">
-                <li>About us</li>
+                <li className="liTag">About us</li>
                 </Link>
 
                 <Link to="/contact">
-                <li>Contact Us</li>
+                <li className="liTag">Contact Us</li>
                 </Link>
 
-                <Link to="/instamart">
-                    <li>Intamart</li>
+                <Link to="/grocery">
+                    <li className="liTag">Grocery</li>
                 </Link>
 
-                <li>cart</li>
+                
             </ul>
 
         </div>

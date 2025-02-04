@@ -7,6 +7,7 @@ import { FilterData } from "../Utils/helper.js";
 import useOnline from "../Hooks/useOnline.jsx";
 import useRestaurantData from "../Hooks/useRestaurantData.jsx"; 
 import { restaurantAPI } from "../Common/config.js";
+import HeroSection from "../components/HeroSection.jsx";
 //filterData JS function
 
 const Body = () => {
@@ -30,7 +31,14 @@ const Body = () => {
   // any value. Then return null and it will not render.
 
   return (
-    <>  
+   
+    <div className="body">  
+     <HeroSection/>
+
+      <div className="SearchContainer">
+
+        
+        <h1>Discover the best food & drinks</h1>
       <div className="Search-Container">
         <input
           type="text"
@@ -53,6 +61,9 @@ const Body = () => {
           Search
         </button>
       </div>
+      </div>
+  
+      
 
       {/*if allRestaurants?.length==0 then renders shimmer Ui else data*/}
       {allRestaurants?.length === 0 ? (
@@ -68,11 +79,12 @@ const Body = () => {
 
             renderCondition.map((restaurantObj) => {
               return (
-                <Link
+                <Link id="cardsAnchor"
                   to={"/restaurant/" + restaurantObj.info.id}
                   key={restaurantObj.info.id}
                 >
                   <RestaurantCard {...restaurantObj.info}></RestaurantCard>
+                
                 </Link>
               );
             })
@@ -80,7 +92,7 @@ const Body = () => {
         </div>
       )}
       {/* {console.log("last data of body")} */}
-    </>
+    </div>
   );
 };
 

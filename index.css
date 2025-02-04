@@ -1,21 +1,41 @@
 
+/*
+
+  Header Background: #FF4B2B (Red) 🍅 (Bold & Appetizing)
+  Header Text (Logo, Menu, Icons): #FFFFFF (White) ⚪ (For contrast & readability)
+  Hover Effects (Menu Items, Links): #FFC107 (Yellow) 🍋 (To make interactions stand out)
+
+*/
+
 *{
 
     margin:0;
     padding:0;
     box-sizing: border-box;
     overflow-x: hidden;
+   
+
 }
+
+:root {
+  --white-color: rgb(247, 244, 244);
+  --green-color: rgb(9, 103, 9);
+  --yellow-color:#FFC107;
+  --font-size: 16px;
+  --border-radius: 5px;
+}
+
 
 #Header{
 
     width:100vw;
     display:flex;
-    background-color: rgb(110, 29, 186);
-    color:white;
+    background-color: var(--green-color);
+    color:var(--white-color);
     justify-content: space-between;
     align-items: center;
     padding:20px;
+    font-size: 15px;
 
 }
 
@@ -25,45 +45,371 @@
    
 }
 
+
 #navbar>ul{
 
     display: flex;
     list-style-type: none;
     gap:10px;
-  
+
 
 }
+
+.liTag{
+
+  color:var(--white-color);
+  font-size: 20px;
+
+  
+}
+
+.liTag:hover{
+
+  color:var(--yellow-color);
+}
+
+a{
+  text-decoration: none;
+}
+
+/*LoggedIn and LoggedOut Button Style*/
+
+.loggedInBtn, .loggedOutBtn{
+
+  width:80px;
+  height:35px;
+  outline-color: black;
+  border: solid black 2px;
+  border-radius:5px;
+  background-color: var(--white-color);
+  color:var(--green-color);
+  cursor: pointer;
+
+}
+
+.loggedInBtn:hover{
+
+  width:80px;
+  height: 35px;
+  outline-color: black;
+  border: solid black 2px;
+  border-radius:5px;
+  background-color: var(--yellow-color);
+  color:rgb(1, 41, 1);
+  cursor: pointer;
+
+}
+
+.loggedOutBtn:hover{
+
+  width:80px;
+  height: px;
+  outline-color: black;
+  border: solid black 2px;
+  border-radius:5px;
+  background-color: var(--yellow-color);
+  color:rgb(1, 41, 1);
+  cursor: pointer;
+
+}
+
+/*Hero Section */
+
+  .HeroSection{
+      width:100%;
+      background-color: rgb(247, 244, 244);
+      color:rgb(4, 73, 4);
+      display: flex;
+      justify-content:space-around;
+      align-items: center;
+      padding:15px;
+  }
+
+  #heading{
+
+    font-size: 60px;
+  }
+
+  #leftDiv{
+
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    padding-left:15px;
+  }
+
+  #rightDiv >img{
+
+    width:100%;
+    height:100%;
+    /* padding:10px; */
+
+  }
+
+  .btns{
+
+    display: flex;
+    gap:20px;
+  }
+
+  #btn{
+
+    width:150px;
+    height: 30px;
+    outline-color: black;
+    border: solid black 2px;
+    border-radius:15px;
+    background-color: var(--white-color);
+    color:var(--green-color);
+    cursor: pointer;
+  
+  }
+  
+  #btn:hover{
+  
+    width:150px;
+    height: 30px;
+    outline-color: black;
+    border: solid black 2px;
+    border-radius:15px;
+    background-color: var(--yellow-color);
+    color:rgb(1, 41, 1);
+    cursor: pointer;
+  
+  }
 
 
 
 /*Body Style */
 
 
+.body{
+
+  background-color: var(--white-color);
+}
+
 .CardsInsideBody{
     display: flex;
     flex-wrap:wrap;
     padding:20px;
-    gap:5px;
+    gap:50px;
+    margin-top:100px;
 
 }
 
-.cards>img{
+/* .cards>img{
 
     width:150px;
 }
 
+#cardsAnchor{
+
+  all: unset;
+  cursor: pointer;
+ 
+}
 .cards{
 
+    
     display: flex;
     flex-direction: column;
     width:200px;
+    height:270px;
     border: solid 1px black;
     border-radius: 5px;
     padding:20px;
-    gap:5px;
+    gap:10px;
 
 
+} */
+
+
+/*cards*/
+
+
+
+.card-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
+
+.card {
+  background: white;
+  border-radius: 15px;
+  width: 280px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+.card-content {
+  padding: 15px;
+}
+
+.card-content p {
+  color: #333;
+  font-size: 14px;
+  margin: 3px 0;
+}
+
+.location {
+  font-weight: bold;
+}
+
+.table-booking {
+  background: #e0e0e0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.rating {
+
+  background: #00b300;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  margin-top:10px;
+  font-size: 14px;
+}
+
+.offers {
+  margin-top: 6px;
+}
+
+.offer-main {
+  background: #008000;
+  color: white;
+  font-size: 14px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offer-main span {
+  font-size: 12px;
+  opacity: 0.8;
+  
+}
+
+.bank-offer {
+  background: rgba(0, 128, 0, 0.1);
+  color: #008000;
+  font-size: 14px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+
+
+
+
+.SearchContainer {
+  position: relative;
+  background-image: url(/src/assets/img/foods1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap:40px;
+  
+}
+
+.SearchContainer>h1{
+
+  background-color: white;
+  color:var(--green-color);
+  font-size: 50px;
+  border: solid black 1px;
+  padding:10px;
+  border-radius:15px;
+  
+}
+
+.SearchContainer>h1:hover{
+
+  background-color: var(--yellow-color);
+  color: black;
+  font-size: 50px;
+  border: solid black 1px;
+  padding:10px;
+  border-radius:15px;
+  
+}
+/* Add the blur and dark overlay */
+.SearchContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 73, 73, 0.4); /* Dark overlay */
+  backdrop-filter: blur(1px); /* Blurring effect */
+  z-index: 1;
+}
+
+/* Ensure content appears above the overlay */
+.SearchContainer * {
+  position: relative;
+  z-index: 2;
+}
+
+
 
 
 .Search-Container{
@@ -71,44 +417,68 @@
     display: flex;
     position: relative;
     /* border:solid 1px black; */
-    width:300px;
+    width:600px;
     padding:10px;
     align-items: center;
     justify-content: center;
-    left:35%;
-    gap:10px;
-    top:10px;
+    gap:5px;
 
 }
 
 
 .Search-Container>input{
 
-  width:200px;
-  height: 30px;
+  width:500px;
+  height: 50px;
   padding:10px;
   outline-color: black;
   border: solid black 2px;
   border-radius:5px;
+  font-size: 20px;
+  color:var(--green-color);
+  
     
+}
+
+
+.Search-Container>input::placeholder{
+
+  font-size:20px;
+  color:var(--green-color);
 }
 
 #SearchBtn{
 
-    width:60px;
-    height: 30px;
-    outline-color: black;
-    border: solid rgb(169, 251, 5) 2px;
-    border-radius:5px;
-    background-color:#6d1bb9;
-    color:white;
-   
+  width:150px;
+  height: 50px;
+  outline-color: black;
+  border: solid black 2px;
+  border-radius:5px;
+  background-color: var(--white-color);
+  color:var(--green-color);
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#SearchBtn:hover{
+
+  width:150px;
+  height: 50px;
+  outline-color: black;
+  border: solid black 2px;
+  border-radius:5px;
+  background-color: var(--yellow-color);
+  color:rgb(1, 41, 1);
+  cursor: pointer;
 
 }
 
+
+
+
 /*Shimmer UI Styles*/
 
-.shimmer-container {
+/* .shimmer-container {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -137,12 +507,12 @@
 .shimmer-container .shimmer-img {
   height: 144px;
   width: 230px;
-}
+} */
 
 
 
 /*Animation to Shimmer Component Cards */
-.stroke {
+/* .stroke {
   height: 15px;
   background: #777;
 }
@@ -159,98 +529,568 @@
   to {
     background-position: 1000px 0;
   }
+} */
+
+
+
+/*new Restaurant Data Shimmer Style*/
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
 }
 
-
-/*LoggedIn and LoggedOut Button Style*/
-
-.loggedInBtn, .loggedOutBtn{
-
-  width:60px;
-  height: 30px;
-  outline-color: black;
-  border: solid #6d1bb9 2px;
-  border-radius:5px;
-  background-color: rgb(169, 251, 5);
-  color:#6d1bb9;
-  cursor: pointer;
-
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 60px;
 }
+
+.shimmer-card {
+  width: 280px;
+  height: 350px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+  background: #d0d0d0; /* Brighter card background */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  overflow: hidden;
+}
+
+/* Consistent shimmer effect */
+/* Shimmer Wrapper with Darker Gradient */
+.shimmer-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    90deg,
+    #dcdcdc 25%,   /* Darker light gray */
+    #bdbdbd 50%,    /* Darker gray */
+    #dcdcdc 75%     /* Same darker light gray for consistency */
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.5s infinite linear; /* Consistent shimmer effect */
+  border-radius: 10px;
+}
+
+/* Individual shimmer elements */
+.shimmer-image {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px;
+}
+
+.shimmer-title {
+  width: 80%;
+  height: 14px;
+  border-radius: 5px;
+}
+
+.shimmer-text {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.shimmer-button {
+  width: 60%;
+  height: 28px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Shimmer Animation Keyframes */
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+
 
 
 
 /*RestaurantMenu*/
 
-.menuContainer{
 
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-}
-
-.menuOfDiv{
-
-  display:flex;
-  padding:10px;
-  gap:10px;
-  border: solid 5px black;
-  margin:10px;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
-
-.menuOfDiv >img{
-
-  width:500px;
-  margin-bottom:10px;
+.hero img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 60px;
+  font-style: italic;
+}
+.hero-content p {
+  font-size: 18px;
+  margin: 10px 0 20px;
+}
+.btn {
+  padding: 12px 24px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+}
+.btn:hover {
+  background: var(--yellow-color);
+  color: var(--green-color);
 }
 
 /*Menu*/
-.menuListContainer{
 
+.menuHeading {
+  color: var(--green-color);
+  font-size: 60px;
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0); /* Softer gradient */
+  width: 70%;
+  text-align: center;
+  border-radius: 40px;
+  box-shadow: 
+    inset 0px 5px 10px rgba(255, 255, 255, 0.5), /* Soft inner shadow */
+    inset 0px -5px 10px rgba(0, 0, 0, 0.05), /* Bottom inner shadow */
+    0px 10px 20px rgba(0, 0, 0, 0.15); /* Outer soft shadow */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+
+
+.menuContainer {
   display: flex;
-  flex-direction: column;
-  gap:5px;
-  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping to the next line */
+  justify-content: space-around; /* Space cards nicely */
+  gap: 20px; /* Add some gap between the cards */
  
-
+ 
 }
 
-
-
-.menuList{
+.menu-card {
+  flex: 0 1 calc(50% - 40px); /* Take about half the width, accounting for gap */
   display: flex;
-  width:500px;
-  gap:10px;
-  border: solid 2px black;
-  margin:10px;
   align-items: center;
-  justify-content: center;
-
+  background: rgb(255, 254, 254);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.258);
+  margin-top:30px;
+  margin-bottom: 20px; /* Add some space between rows */
 }
-.menuListDetails{
 
+.menu-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+
+.menu-content {
+    flex: 1;
+    
+}
+.title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.category {
+    font-size: 1em;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+.price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+.description {
+    font-size: 0.9em;
+    color: #555;
+}
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    margin-top: 15px;
+}
+.buttons button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 40%;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+.buttons button:hover {
+    opacity: 0.8;
+}
+
+
+
+
+/*Menu Loader UI*/
+
+/* Basic styles */
+
+
+.loader-container {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width:100vw;
+  height:100vh;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap:5px;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
 }
+
+.spinner {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1.5s linear infinite;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #3498db;
+}
+
+/* Keyframes for spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#content {
+  text-align: center;
+}
+
+
+
+
 
 
 
 
 /*About us Style*/
 
-.About-us{
-
-   border:solid 2px black;
-   margin:20px;
-   padding:5px;
+.container {
+  display: flex;
+  align-items: center;
+  padding:50px;
+  width:100%;
+  height:100vh;
 }
 
-.Profile{
+.text {
+  flex: 1;
+}
 
-  border:solid 2px red;
+.text h2 {
+  font-size: 100px;
+  color: var(--green-color);
+  margin: 0;
+}
+
+.text h1 {
+  font-size: 70px;
+  color: #222;
+  margin: 5px 0;
+}
+
+.highlight {
+  background-color: var(--green-color);
+  padding: 5px 10px;
+  color: white;
+  display: inline-block;
+  border-radius: 5px;
+ 
+}
+
+.tagline {
+  font-style: italic;
+  color: #555;
+  margin-top: 10px;
+  font-size: 27px;
+}
+
+.tagline b {
+  font-weight: bold;
+}
+
+.tagline span {
+  color: orange;
+}
+
+.image {
+  flex: 1;
+  text-align: right;
+}
+
+.image img {
+ width: 100%;
+  height: auto;
+}
+
+
+/*Contact us*/
+
+/* General Styles */
+
+
+/* Header */
+
+#contactUsPageContainer{
+
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+#contactUsheader {
+  background-color:var(--green-color);
+  margin-top: 20px;
+  color: var(--white-color);
+  text-align: center;
+  padding: 16px;
+  font-size: 30px;
+  font-weight: bold;
+  width: 70%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
   
 }
+
+/* Contact Form Container */
+.Contactcontainer {
+  background-color: white;
+  padding: 32px;
+  max-width: 500px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 16px;
+}
+
+#ContactLabel {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+  border-color: black;
+  outline: none;
+ 
+}
+
+/* Submit Button */
+.ContactButtons {
+  width: 100%;
+  background: var(--green-color);
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border: solid 2px black;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ContactButtons:hover {
+  background-color: var(--yellow-color);
+  color:var(--green-color);   
+  
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-links a {
+
+  margin-top:20px;
+  color: var(--green-color);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: black;
+}
+
+.social-icon {
+  font-size: 20px;
+ 
+}
+
+
+
+/*Grocery*/
+
+.Grocerycontainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 100px;
+  height:100vh;
+}
+
+.Grocerytext-section {
+  width: 50%;
+}
+
+.Grocerytext-section p {
+  color: #8DC63F;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Grocerytext-section h1 {
+  font-size: 50px;
+  color: #222;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.Grocerytext-section .Grocerydescription {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.Grocerybtn {
+  padding: 12px 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.Grocerybtn.Groceryshop {
+  background: #8DC63F;
+  color: white;
+}
+
+.Grocerybtn.Groceryread {
+  background: #103A20;
+  color: white;
+}
+
+.Grocerybtn:hover {
+  opacity: 0.8;
+}
+
+.Groceryimage-section {
+  width: 50%;
+  text-align: right;
+}
+
+.Groceryimage-section img {
+  max-width: 600px;
+  width: 100%;
+}
+
+
+/*Footer*/
+
+.fotterContainer{
+
+   width:100%;
+   height:80px;
+   display: flex;
+   background-color: var(--green-color);
+   color: var(--white-color);
+   justify-content: center;
+   align-items: center;
+   font-size: 15px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+
+}
+
+#name{
+
+   color:var(--yellow-color);
+}
+
+
