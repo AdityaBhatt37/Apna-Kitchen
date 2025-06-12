@@ -1,0 +1,33 @@
+{
+  "name": "online_food_app",
+  "version": "1.0.0",
+  "description": "\"Starting first react project\"",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdityaBhatt37/Online_Food_App.git"
+  },
+  "author": "\"Aditya Bhatt\"",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdityaBhatt37/Online_Food_App/issues"
+  },
+  "homepage": "https://github.com/AdityaBhatt37/Online_Food_App#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "parcel-bundler": "^1.12.5",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.8.2",
+    "lucide-react": "^0.474.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^6.28.2"
+  }
+}
