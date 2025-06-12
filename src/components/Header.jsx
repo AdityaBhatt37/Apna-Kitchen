@@ -3,6 +3,9 @@ import Rlogo from '../assets/img/logo.png'; //importing image
 
 import {Link} from "react-router-dom";
 
+import Cart from "./Cart.jsx";
+import {useSelector} from "react-redux";
+
 
 const Logo = () =>{
 
@@ -17,6 +20,7 @@ const Logo = () =>{
 const Header = () =>{
 
     const [loggedInUser, setLoggedInUser] = useState(true);
+        const cartItems = useSelector((store)=> store.cart.Items); //subscribing our cart with the store.
 
     return(
     <div id="Header">
@@ -47,12 +51,9 @@ const Header = () =>{
 
         </div>
        
-       {
-       loggedInUser?
-        (<button className="loggedInBtn" onClick={()=>{setLoggedInUser(false)}}>Login</button>):
-        (<button className="loggedOutBtn" onClick={()=>{setLoggedInUser(true);}}>Logout</button>)
-       }
-       
+
+        <Link to="/cart"><li className='loggedInBtn'>cart-{cartItems.length}</li>
+                </Link>
     </div>
     );
 

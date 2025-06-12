@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import MenuShimmerUI from "./MenuLoader";
 import useRestaurantMenu from "../Hooks/useRestaurantMenu";
+import { useDispatch } from "react-redux";
+import { addItems } from "../Utils/Redux/cartSlice";
 
 //useParam() HOOk
 /*
@@ -12,6 +14,14 @@ import useRestaurantMenu from "../Hooks/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   // const param = useParams();
+
+  const dispatch = useDispatch();
+
+    const handleAddItem = (items) =>{
+
+        dispatch(addItems(items));
+
+    }
 
   const { resId } = useParams();
   const restaurantMenu = useRestaurantMenu(resId);
@@ -81,8 +91,8 @@ const RestaurantMenu = () => {
                         chilli oil.
                       </div>
                       <div class="buttons">
-                        <button>Order Click + Collect</button>
-                        <button>Order Delivery</button>
+                        <button onClick={() => handleAddItem(items)}>add to cart</button>
+
                       </div>
                     </div>
                   </div>

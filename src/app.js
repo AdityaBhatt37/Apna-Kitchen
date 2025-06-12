@@ -10,10 +10,12 @@ import RestaurantMenu from "./components/RestaurantMenu.jsx";
 import Profile from "./components/Profile.jsx";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
-
+import { Provider } from "react-redux";
+import store from "./Utils/Redux/store.js";
 
 import {lazy,Suspense} from "react";
 import MenuLoader from "./components/MenuLoader.jsx";
+import Cart from "./components/Cart.jsx";
 // import grocery from "./components/grocery.jsx";
 
  const Grocery = lazy(()=> import("./components/Grocery.jsx"));
@@ -23,7 +25,7 @@ import MenuLoader from "./components/MenuLoader.jsx";
 const AppLayout = ()=>{
 
     return(
-        
+         <Provider store={store}>
         <React.Fragment>
         <Header/>
 
@@ -31,6 +33,7 @@ const AppLayout = ()=>{
 
         <Footer/>
         </React.Fragment>
+        </Provider>
     );
 };
 
@@ -75,6 +78,10 @@ const appRouter = createBrowserRouter([
 
                 path: "/restaurant/:resId",
                 element: <RestaurantMenu/>
+            },
+            {
+                path: "/cart",
+                element: <Cart/>
             },
 
             {

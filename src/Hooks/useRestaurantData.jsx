@@ -30,8 +30,6 @@ const useREstaurantData = (restaurantAPI) =>{
    
   };
 
-
-
   return[allRestaurants,filteredRes];
 }
 

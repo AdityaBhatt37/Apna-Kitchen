@@ -18,7 +18,7 @@ const MenuLoader = () => {
         // Loader UI if loading
         <div id="loader" className="loader-container">
           <div className="spinner"></div>
-          <p>Loading...</p>
+          <p id="loadingP">Loading...</p>
         </div>
       ) : (
         // Content after loading

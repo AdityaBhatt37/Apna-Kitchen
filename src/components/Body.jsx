@@ -8,6 +8,7 @@ import useOnline from "../Hooks/useOnline.jsx";
 import useRestaurantData from "../Hooks/useRestaurantData.jsx"; 
 import { restaurantAPI } from "../Common/config.js";
 import HeroSection from "../components/HeroSection.jsx";
+import Offline from "../components/Offline.jsx";
 //filterData JS function
 
 const Body = () => {
@@ -22,7 +23,7 @@ const Body = () => {
   const isOnline = useOnline();
 
   if (!isOnline) {
-    return <h1>Please Check your Internet connectivity</h1>;
+    return <Offline/>;
   }
 
   //How to avod the rendring the component(Early return)
